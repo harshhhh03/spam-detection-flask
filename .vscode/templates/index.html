@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Spam Detection System</h1>
+
+    <form method="post">
+        <textarea name="message" placeholder="Enter your message" required></textarea>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
