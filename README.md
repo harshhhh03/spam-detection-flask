@@ -3,20 +3,17 @@
 A Machine Learning–based **Spam Detection Web Application** that classifies messages as **Spam** or **Not Spam** in real time.  
 Built using **Python, Flask, and Scikit-learn**, and deployed on **Render Cloud**.
 
----
 
 ## 🚀 Live Demo
 🔗 https://spam-detection-6ycz.onrender.com  
 
 > ⚠️ Note: The app is hosted on Render Free Tier, so the first request may take a few seconds to load due to server sleep.
 
----
 
 ## 📌 Problem Statement
 Spam messages are a common issue in SMS and email communication, leading to wasted time and potential security risks.  
 This project aims to **automatically detect spam messages** using Machine Learning techniques.
 
----
 
 ## 🧠 Solution Overview
 The system uses **Natural Language Processing (NLP)** and **Machine Learning classification** to analyze message text and predict whether it is spam.
@@ -27,7 +24,6 @@ The system uses **Natural Language Processing (NLP)** and **Machine Learning cla
 3. A trained **Naive Bayes classifier** predicts the category  
 4. Result is displayed instantly on the web page  
 
----
 
 ## 🛠️ Technologies Used
 
