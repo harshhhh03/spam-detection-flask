@@ -53,14 +53,15 @@ Algorithm: Multinomial Naive Bayes
 Feature Extraction: TF-IDF
 Accuracy: ~95% on the SMS Spam dataset
 
-🎯 Key Features
+## 🎯 Key Features
+
 Real-time spam detection
-Clean and responsive UI
-End-to-end ML pipeline
-Cloud deployment with live URL
-Beginner-friendly and interview-ready
+Clean and responsive user interface
+End-to-end machine learning pipeline
+Cloud deployment with live URL (Render)
 Displays prediction confidence percentage
-Improved user experience
+Improved user experience and usability
+Beginner-friendly and interview-ready project
 
 
 🔮 Future Enhancements
