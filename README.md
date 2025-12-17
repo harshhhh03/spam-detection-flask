@@ -59,6 +59,9 @@ Clean and responsive UI
 End-to-end ML pipeline
 Cloud deployment with live URL
 Beginner-friendly and interview-ready
+Displays prediction confidence percentage
+Improved user experience
+
 
 🔮 Future Enhancements
 Display prediction confidence percentage
