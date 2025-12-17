@@ -1,25 +1,32 @@
 from flask import Flask, render_template, request
 import pickle
+import numpy as np
 
 app = Flask(__name__)
 
 model = pickle.load(open("model.pkl", "rb"))
-cv = pickle.load(open("vectorizer.pkl", "rb"))
+vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     result = ""
-    if request.method == "POST":
-        msg = request.form["message"]
-        data = cv.transform([msg])
-        prediction = model.predict(data)
+    confidence = ""
 
-        if prediction[0] == 1:
-            result = "Spam Message ❌"
+    if request.method == "POST":
+        message = request.form["message"]
+
+        data = vectorizer.transform([message])
+        prediction = model.predict(data)[0]
+        prob = model.predict_proba(data).max() * 100
+
+        if prediction == 1:
+            result = "Spam ❌"
         else:
             result = "Not Spam ✅"
 
-    return render_template("index.html", result=result)
+        confidence = f"{prob:.2f}%"
+
+    return render_template("index.html", result=result, confidence=confidence)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)

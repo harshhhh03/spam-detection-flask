@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
+    
 <div class="container">
     <h1>Spam Detection System</h1>
 
@@ -16,8 +16,10 @@
 
     {% if result %}
         <div class="result">{{ result }}</div>
+        <p class="confidence">Confidence: {{ confidence }}</p>
     {% endif %}
 </div>
+
 
 </body>
 </html>
