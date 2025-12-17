@@ -14,19 +14,24 @@ def home():
 
     if request.method == "POST":
         message = request.form["message"]
-
         data = vectorizer.transform([message])
+
         prediction = model.predict(data)[0]
-        prob = model.predict_proba(data).max() * 100
 
-        if prediction == 1:
-            result = "Spam ❌"
+        # SAFE confidence calculation
+        if hasattr(model, "predict_proba"):
+            prob = model.predict_proba(data).max() * 100
+            confidence = f"{prob:.2f}%"
         else:
-            result = "Not Spam ✅"
+            confidence = "N/A"
 
-        confidence = f"{prob:.2f}%"
+        result = "Spam ❌" if prediction == 1 else "Not Spam ✅"
 
-    return render_template("index.html", result=result, confidence=confidence)
+    return render_template(
+        "index.html",
+        result=result,
+        confidence=confidence
+    )
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
